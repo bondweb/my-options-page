@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: My options page
-Plugin URI: http://wordpress.org/plugins/hello-dolly/
+Plugin URI: #
 Description: Questo pulg-in registra una nuova pagina opzioni per aggiungere un testo personalizzato nel piè pagina del sito.
 Author: Mario B
 Version: 1.0
