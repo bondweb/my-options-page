@@ -51,7 +51,7 @@ function myplugin_options_page(){
 add_action("wp_footer", "add_text_to_footer");
  
 // Define 'Add_Text_to_footer'
-function Add_Text_to_footer()
+function add_Text_to_footer()
 {
  $footer = get_option('myplugin_option_name');
   echo "<p style='color: white; text-align:center'>$footer</p>";
