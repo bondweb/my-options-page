@@ -19,7 +19,7 @@ add_action( 'admin_init', 'myplugin_register_settings' );
 // Creo la pagina opzioni del plug-in
 
 function myplugin_register_options_page() {
-  add_options_page('Page Title', 'Plugin Menu', 'manage_options', 'myplugin', 'myplugin_options_page');
+  add_options_page('Page Title', 'Testo nel footer', 'manage_options', 'myplugin', 'myplugin_options_page');
 }
 add_action('admin_menu', 'myplugin_register_options_page');
 
