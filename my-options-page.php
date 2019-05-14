@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: My options page
+Plugin Name: My Plug-in
 Plugin URI: #
 Description: Questo pulg-in registra una nuova pagina opzioni per aggiungere un testo personalizzato nel piè pagina del sito.
 Author: Mario B
@@ -8,7 +8,7 @@ Version: 1.0
 Author URI: #
 */
 
-// Register Settings For a Plugin 
+// Registro le opzioni presenti nella pagina del Plugin 
 
 function myplugin_register_settings() {
    add_option( 'myplugin_option_name', 'This is my option value.');
@@ -16,14 +16,14 @@ function myplugin_register_settings() {
 }
 add_action( 'admin_init', 'myplugin_register_settings' );
 
-// Creating an Options Page
+// Creo la pagina opzioni del plug-in
 
 function myplugin_register_options_page() {
   add_options_page('Page Title', 'Plugin Menu', 'manage_options', 'myplugin', 'myplugin_options_page');
 }
 add_action('admin_menu', 'myplugin_register_options_page');
 
-// Display Settings on Option’s Page
+// Visualizzo le opzioni nella pagina del plug-in
 
 function myplugin_options_page(){
 ?>
@@ -47,12 +47,12 @@ function myplugin_options_page(){
 } ?>
 
 <?php
-// Hook the 'wp_footer' action hook, add the function named 'mfp_Add_Text_to_footer' to it
-add_action("wp_footer", "mfp_Add_Text_to_footer", 8);
+// Aggancio la mia funzione add_text_to_footer all'Hook 'wp_footer'
+add_action("wp_footer", "add_text_to_footer");
  
-// Define 'mfp_Add_Text_to_footer'
-function mfp_Add_Text_to_footer()
+// Define 'Add_Text_to_footer'
+function Add_Text_to_footer()
 {
- $piede = get_option('myplugin_option_name');
-  echo "<p style='color: white; text-align:center'>$piede</p>";
+ $footer = get_option('myplugin_option_name');
+  echo "<p style='color: white; text-align:center'>$footer</p>";
 }
